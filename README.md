@@ -19,3 +19,8 @@ The bridge works actually only with an standard user after registration with Zfc
 At this moment there is no administration backend to change the role of an User after 
 registration (only with DB-Tools). If you need an admin you need to edit manually your
 user_role_linker table.
+
+
+!!!ATTENTION!!!
+
+For compatibility with packagist the repo was renamed to lowercase characters
