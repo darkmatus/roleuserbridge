@@ -16,7 +16,7 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.*",
-        "zf-commons/zfc-base": "dev-master",
+        "zf-commons/zfc-base": "0.1.0",
         "zf-commons/zfc-user": "dev-master",
         "bjyoungblood/bjy-authorize": "dev-master"
     },
