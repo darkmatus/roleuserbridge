@@ -5,33 +5,24 @@ use Zend\Stdlib\Hydrator\HydratorInterface;
 
 use ZfcBase\Mapper\AbstractDbMapper;
 
-/**
- * @category    Test
- * @package     Test_Model
- * @subpackage  Adapter
- * @copyright   Copyright (c) 18.10.2012 Unister GmbH
- * @author      Michael Müller <michael.mueller@unister.de>
- * @version     $Id:$
- */
 
-/**
- * Kurze Beschreibung der Klasse
- *
- * Lange Beschreibung der Klasse (wenn vorhanden)...
- *
- * @category    Test
- * @package     Test_Model
- * @subpackage  Adapter
- * @copyright   Copyright (c) 18.10.2012 Unister GmbH
- */
 class RoleMapper extends AbstractDbMapper
 {
-    protected $tableName  = 'user_role_linker';
+
+    public function getOptions()
+    {
+        if (null === $this->options) {
+            $config = $this->getServiceManager()->get('config');
+            $this->options = $config['user_config'];
+        }
+        return $this->options;
+    }
 
     public function findById($user_id)
     {
+        $options = $this->getOptions();
         $select = $this->getSelect()
-        ->from($this->tableName)
+        ->from($options['user_role_linker'])
         ->where(array('user_id' => $user_id));
 
         $entity = $this->select($select)->current();
@@ -41,8 +32,9 @@ class RoleMapper extends AbstractDbMapper
 
     public function findByRole($role_id)
     {
+        $options = $this->getOptions();
         $select = $this->getSelect()
-        ->from($this->tableName)
+        ->from($options['user_role_linker'])
         ->where(array('role_id' => $role_id));
 
         $entity = $this->select($select)->current();
@@ -52,7 +44,8 @@ class RoleMapper extends AbstractDbMapper
 
     public function insert($entity, $tableName = null, HydratorInterface $hydrator = null)
     {
-        $tableName = $this->tableName;
+        $options = $this->getOptions();
+        $tableName = $options['user_role_linker'];
         $result = parent::insert($entity, $tableName, $hydrator);
 
         return $result;
