@@ -10,7 +10,8 @@ Requires: ZF2 latest master,
 Installation:
 
 - Install ZfcUser and BjyAuthorize as shown on thier pages
-- Copy the ZfcUser/BjyAuthorize Bridge into your module or vendor directorie
+- Copy the ZfcUser/BjyAuthorize Bridge into your module or vendor directory
+- Copy 'roleuserbridge/config/linker.config.php' to your 'config/autoload/'
 - add a entry to your application.config.php with 'RoleUserBridge'
 
 Comments:
@@ -20,6 +21,7 @@ At this moment there is no administration backend to change the role of an User 
 registration (only with DB-Tools). If you need an admin you need to edit manually your
 user_role_linker table.
 
+If you has your own linker-table edit the linker.config.php with your own table name
 
 !!!ATTENTION!!!
 
