@@ -16,11 +16,7 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.*",
-<<<<<<< HEAD
-        "zf-commons/zfc-base": "0.1.0",
-=======
         "zf-commons/zfc-base": "0.*",
->>>>>>> 95fb6a3474fc4032166a39f950f2ef8010af5412
         "zf-commons/zfc-user": "0.*",
         "bjyoungblood/bjy-authorize": "dev-master"
     },
@@ -32,8 +28,4 @@
             "./"
         ]
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 95fb6a3474fc4032166a39f950f2ef8010af5412
