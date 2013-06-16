@@ -13,8 +13,8 @@ class RoleMapper extends AbstractDbMapper
     public function getOptions()
     {
         if (null === $this->options) {
-            $config = $this->getServiceManager()->get('config');
-            $this->options = $config['user_config'];
+            $config = $this->getServiceLocator()->get('config');
+            $this->options = $config['linker_config'];
         }
         return $this->options;
     }
