@@ -8,6 +8,7 @@ use ZfcBase\Mapper\AbstractDbMapper;
 
 class RoleMapper extends AbstractDbMapper
 {
+    private $options;
 
     public function getOptions()
     {
