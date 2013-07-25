@@ -1,10 +1,9 @@
 <?php
 
 namespace RoleUserBridge\Mapper;
-use Zend\Stdlib\Hydrator\HydratorInterface;
 
 use ZfcBase\Mapper\AbstractDbMapper;
-
+use Zend\Stdlib\Hydrator\HydratorInterface;
 
 class RoleMapper extends AbstractDbMapper
 {
@@ -24,24 +23,24 @@ class RoleMapper extends AbstractDbMapper
         return $this->options;
     }
 
-    public function findById($user_id)
+    public function findById($userId)
     {
         $options = $this->getOptions();
         $select = $this->getSelect()
         ->from($options['user_role_linker'])
-        ->where(array('user_id' => $user_id));
+        ->where(array('user_id' => $userId));
 
         $entity = $this->select($select)->current();
         $this->getEventManager()->trigger('find', $this, array('entity' => $entity));
         return $entity;
     }
 
-    public function findByRole($role_id)
+    public function findByRole($roleId)
     {
         $options = $this->getOptions();
         $select = $this->getSelect()
         ->from($options['user_role_linker'])
-        ->where(array('role_id' => $role_id));
+        ->where(array('role_id' => $roleId));
 
         $entity = $this->select($select)->current();
         $this->getEventManager()->trigger('find', $this, array('entity' => $entity));
@@ -57,7 +56,7 @@ class RoleMapper extends AbstractDbMapper
         return $result;
     }
 
-// spätere Verwendung im Admin Interface (zB)
+    // spätere Verwendung im Admin Interface (zB)
     public function update($entity, $where = null, $tableName = null, HydratorInterface $hydrator = null)
     {
         if (!$where) {
