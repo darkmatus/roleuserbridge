@@ -4,6 +4,7 @@ namespace RoleUserBridge\Mapper;
 
 use ZfcBase\Mapper\AbstractDbMapper;
 use Zend\Stdlib\Hydrator\HydratorInterface;
+use Zend\ServiceManager\ServiceManager;
 
 class RoleMapper extends AbstractDbMapper
 {
@@ -17,7 +18,7 @@ class RoleMapper extends AbstractDbMapper
     public function setOptions()
     {
         if (null === $this->options) {
-            $config = $this->getServiceLocator()->get('config');
+            $config = $this->getServiceManager()->get('config');
             $this->options = $config['linker_config'];
         }
         return $this->options;
