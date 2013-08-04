@@ -56,6 +56,7 @@ class RoleMapper extends AbstractDbMapper
     {
         $options = $this->getOptions();
         $tableName = $options['user_role_linker'];
+        $entity['role_id'] = $options['user_role_id'];
         $result = parent::insert($entity, $tableName, $hydrator);
 
         return $result;
