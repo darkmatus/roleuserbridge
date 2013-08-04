@@ -10,6 +10,10 @@ class RoleMapper extends AbstractDbMapper
 {
     private $options;
 
+    public function __construct($config) {
+        $this->options = $config['linker_config'];
+    }
+
     public function getOptions()
     {
         return $this->options;
