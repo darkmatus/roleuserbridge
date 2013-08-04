@@ -10,6 +10,10 @@ class RoleMapper extends AbstractDbMapper
 {
     private $options;
 
+    public function __construct($config) {
+        $this->options = $config['linker_config'];
+    }
+
     public function getOptions()
     {
         return $this->options;
@@ -52,6 +56,7 @@ class RoleMapper extends AbstractDbMapper
     {
         $options = $this->getOptions();
         $tableName = $options['user_role_linker'];
+        $entity['role_id'] = $options['user_role_id'];
         $result = parent::insert($entity, $tableName, $hydrator);
 
         return $result;

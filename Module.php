@@ -62,7 +62,8 @@ class Module implements AutoloaderProviderInterface,
 
                 'user_role_mapper' => function ($sm) {
                     $options = $sm->get('zfcuser_module_options');
-                    $mapper = new Mapper\RoleMapper();
+                    $config = $sm->get('config');
+                    $mapper = new Mapper\RoleMapper($config);
                     $mapper->setDbAdapter($sm->get('zfcuser_zend_db_adapter'));
                     $entityClass = $options->getUserEntityClass();
                     $mapper->setEntityPrototype(new $entityClass);
