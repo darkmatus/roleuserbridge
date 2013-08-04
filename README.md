@@ -9,7 +9,7 @@ Requires: ZF2 latest master,
 
 Installation:
 
-- Install ZfcUser and BjyAuthorize as shown on thier pages
+- Install ZfcUser and BjyAuthorize as shown on thier pagesdingus
 - Copy the ZfcUser/BjyAuthorize Bridge into your module or vendor directory
 - Copy 'roleuserbridge/config/linker.config.php' to your 'config/autoload/'
 - add a entry to your application.config.php with 'RoleUserBridge'
@@ -20,14 +20,15 @@ The bridge works actually only with an standard user after registration with Zfc
 At this moment there is no administration backend to change the role of an User after 
 registration (only with DB-Tools). If you need an admin you need to edit manually your
 user_role_linker table.
-
+dingus
 If you has your own linker-table edit the linker.config.php with your own table name.
 You should also set the id of the user record in your 'user_role' table. For example, if your
 role table looks like this:
 
+<pre>
 mysql> SELECT * FROM `user_role`;
 +----+---------+------------+-----------+
-| id | role_id | is_default | parent_id |
+| id | role\_id | is\_default | parent\_id |
 +----+---------+------------+-----------+
 |  1 | guest   |          1 |      NULL |
 |  2 | user    |          0 |      NULL |
@@ -36,8 +37,7 @@ mysql> SELECT * FROM `user_role`;
 3 rows in set (0.00 sec)
 
 you should modify the linker.config.php so that
-
-'user_role_id' => 2
+'user\_role\_id' => 2
 
 !!!ATTENTION!!!
 
