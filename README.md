@@ -21,7 +21,23 @@ At this moment there is no administration backend to change the role of an User 
 registration (only with DB-Tools). If you need an admin you need to edit manually your
 user_role_linker table.
 
-If you has your own linker-table edit the linker.config.php with your own table name
+If you has your own linker-table edit the linker.config.php with your own table name.
+You should also set the id of the user record in your 'user_role' table. For example, if your
+role table looks like this:
+
+mysql> SELECT * FROM `user_role`;
++----+---------+------------+-----------+
+| id | role_id | is_default | parent_id |
++----+---------+------------+-----------+
+|  1 | guest   |          1 |      NULL |
+|  2 | user    |          0 |      NULL |
+|  3 | admin   |          0 |         2 |
++----+---------+------------+-----------+
+3 rows in set (0.00 sec)
+
+you should modify the linker.config.php so that
+
+'user_role_id' => 2
 
 !!!ATTENTION!!!
 
