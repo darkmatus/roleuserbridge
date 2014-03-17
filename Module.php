@@ -12,25 +12,6 @@ use Zend\ModuleManager\Feature\ConfigProviderInterface;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 
-/**
- * @category    Test
- * @package     Test_Model
- * @subpackage  Adapter
- * @copyright   Copyright (c) 18.10.2012 Unister GmbH
- * @author      Michael Müller <michael.mueller@unister.de>
- * @version     $Id:$
- */
-
-/**
- * Kurze Beschreibung der Klasse
- *
- * Lange Beschreibung der Klasse (wenn vorhanden)...
- *
- * @category    Test
- * @package     Test_Model
- * @subpackage  Adapter
- * @copyright   Copyright (c) 18.10.2012 Unister GmbH
- */
 class Module implements AutoloaderProviderInterface,
     ConfigProviderInterface,
     ServiceProviderInterface
