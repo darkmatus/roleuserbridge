@@ -11,7 +11,7 @@ class RoleMapper extends AbstractDbMapper
     private $options;
 
     public function __construct($config) {
-        $this->options = $config['linker_config'];
+        $this->options = $config['roleuserbridge'];
     }
 
     public function getOptions()
@@ -23,7 +23,7 @@ class RoleMapper extends AbstractDbMapper
     {
         if (null === $this->options) {
             $config = $this->getServiceManager()->get('config');
-            $this->options = $config['linker_config'];
+            $this->options = $config['roleuserbridge'];
         }
         return $this->options;
     }
