@@ -11,7 +11,7 @@ Installation:
 
 - Install ZfcUser and BjyAuthorize as shown on thier pagesdingus
 - Copy the ZfcUser/BjyAuthorize Bridge into your module or vendor directory
-- Copy 'roleuserbridge/config/linker.config.php' to your 'config/autoload/'
+- Copy 'roleuserbridge/config/roleuserbridge.config.php' to your 'config/autoload/'
 - add a entry to your application.config.php with 'RoleUserBridge'
 
 Comments:
@@ -38,7 +38,7 @@ mysql> SELECT * FROM `user_role`;
 +----+---------+------------+-----------+
 3 rows in set (0.00 sec)
 </pre>
-you should modify the linker.config.php so that  
+you should modify the roleuserbridge.config.php so that  
 'user\_role\_id' => 2
 
 !!!ATTENTION!!!
