@@ -48,7 +48,7 @@ class Module implements AutoloaderProviderInterface,
                     $mapper->setDbAdapter($sm->get('zfcuser_zend_db_adapter'));
                     $entityClass = $options->getUserEntityClass();
                     $mapper->setEntityPrototype(new $entityClass);
-                    $mapper->setHydrator(new \ZfcUser\Mapper\UserHydrator());
+                    $mapper->setHydrator($sm->get('zfcuser_user_hydrator'));
                     return $mapper;
                 },
             )
